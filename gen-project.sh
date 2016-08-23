@@ -40,11 +40,11 @@ cat > $1/add-to-git.sh <<EOF
 # Upload this lib to git
 # Created by Yevgeniy Goncharov, http://sys-adm.in
 
-if [[ -z $1 ]]; then
+if [[ -z \$1 ]]; then
   echo "Please add commit comment!"
 else
   git add .
-  git commit -m "$1"
+  git commit -m "\$1"
   git push origin master
 fi
 EOF
@@ -53,26 +53,24 @@ EOF
 # Script for generate new script file template
 touch $1/add-new-script.sh && chmod +x $1/add-new-script.sh
 
-cat > $1/add-new-script.sh <<EOF
+cat>$1/add-new-script.sh<<EOF
 #!/bin/bash
 # Add new script to this dir
 # Created by Yevgeniy Goncharov, http://sys-adm.in
 
-if [[ -z $1 ]]; then
+if [[ -z \$1 ]]; then
   echo "Please set script name.."
 else
   # Create and set ex perm
-  touch $1 && chmod +x $1
+  touch \$1 && chmod +x \$1
   # Add necessary strings
-  cat > $1 <<EOF
+  cat > \$1 <<EOF
 #!/bin/bash
 # Add script description
 # Created by Yevgeniy Goncharov, http://sys-adm.in
-\EOF
-  subl $1
-  # nano $1
-fi
 EOF
+
+echo -e "EOF\n  subl \$1\nfi" >> $1/add-new-script.sh
 
 # ---------------------------------------------------------- ADD README #
 
