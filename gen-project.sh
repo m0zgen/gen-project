@@ -31,7 +31,7 @@ cat > $1/$1.sh <<EOF
 # Created by Yevgeniy Goncharov, http://sys-adm.in
 EOF
 
-# ---------------------------------------------------------- CREATE ADD-TO-GIT #
+# ---------------------------------------------------------- ADD-TO-GIT #
 # Script for pulling project into Git repo
 touch $1/add-to-git.sh && chmod +x $1/add-to-git.sh
 
@@ -49,7 +49,7 @@ else
 fi
 EOF
 
-# ---------------------------------------------------------- CREATE ADD-NEW-SCRIPT #
+# ---------------------------------------------------------- ADD-NEW-SCRIPT #
 # Script for generate new script file template
 touch $1/add-new-script.sh && chmod +x $1/add-new-script.sh
 
@@ -80,6 +80,14 @@ cat > $1/README.md <<EOF
 # Project - $1
 
 Project description
+EOF
+
+# ---------------------------------------------------------- ADD GITIGNORE #
+touch $1/.gitignore
+
+cat > $1/.gitignore <<EOF
+add-new-script.sh
+add-to-git.sh
 EOF
 
 # ---------------------------------------------------------- OPEN IN SUBL #
