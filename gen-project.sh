@@ -29,6 +29,17 @@ cat > $1/$1.sh <<EOF
 #!/bin/bash
 # Add script description
 # Created by Yevgeniy Goncharov, http://sys-adm.in
+
+# ---------------------------------------------------------- VARIABLES #
+
+PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+SCRIPTPATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
+SCRIPTNAME=`basename "$0"`
+
+# ---------------------------------------------------------- BODYs #
+
+# Enter code here
+
 EOF
 
 # ---------------------------------------------------------- ADD-TO-GIT #
