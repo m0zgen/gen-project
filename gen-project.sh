@@ -93,9 +93,10 @@ echo -e "EOF\n  subl \$1\nfi" >> $1/add-new-script.sh
 touch $1/README.md
 
 cat > $1/README.md <<EOF
-# Project - $1
+# Project - extractedName
 
 Project description
+
 EOF
 
 # ---------------------------------------------------------- ADD GITIGNORE #
