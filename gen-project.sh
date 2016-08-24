@@ -22,10 +22,15 @@ fi
 
 # ---------------------------------------------------------- CREATE PROJECT #
 
-# Create work folder and general script file
-mkdir $1 && touch $1/$1.sh && chmod +x $1/$1.sh
+# Example cutting path
+# c
+projectPath="$1"
+extractedName=$(echo "${projectPath##*/}")
 
-cat > $1/$1.sh <<EOF
+# Create work folder and general script file
+mkdir $1 && touch $1/$extractedName.sh && chmod +x $1/$extractedName.sh
+
+cat > $1/$extractedName.sh <<EOF
 #!/bin/bash
 # Add script description
 # Created by Yevgeniy Goncharov, http://sys-adm.in
@@ -102,4 +107,4 @@ add-to-git.sh
 EOF
 
 # ---------------------------------------------------------- OPEN IN SUBL #
-subl $1/$1.sh
+subl $1/$extractedName.sh

@@ -8,6 +8,12 @@ Script for generate project folder and simple template and work files.
   ./gen-project.sh "MyProject"
 ```
 
+or
+
+```sh
+  ./gen-project.sh ../MyProject
+```
+
 # Result
 After script work, you can see project folder "MyProject" and script files:
 - MyProject/MyProject.sh
