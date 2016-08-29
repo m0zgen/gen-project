@@ -59,6 +59,7 @@ cat > $1/add-to-git.sh <<EOF
 if [[ -z \$1 ]]; then
   echo "Please add commit comment!"
 else
+  git rm -r --cached .
   git add .
   git commit -m "\$1"
   git push origin master
